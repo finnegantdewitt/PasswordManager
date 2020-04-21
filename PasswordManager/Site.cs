@@ -4,6 +4,7 @@ using System.Text;
 
 namespace PasswordManager
 {
+    [Serializable]
     public class Site
     {
         public string URL { get; set; }

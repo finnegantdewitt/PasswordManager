@@ -27,17 +27,28 @@ namespace PasswordManager
         public MainWindow()
         {
             InitializeComponent();
+            passes.LoadSites();
             lbPassList.ItemsSource = passes.GetSites();
         }
         private void btnClickMe_Click(object sender, RoutedEventArgs e)
         {
-            PassFocusWindow pfwin = new PassFocusWindow((lbPassList.SelectedItem as Site));
-            pfwin.Show();
+            AesTest aesTest = new AesTest();
+            aesTest.Show();
         }
         private void lbPassList_MouseDoubleClick(object sender, MouseEventArgs e)
         {
             PassFocusWindow pfwin = new PassFocusWindow((lbPassList.SelectedItem as Site));
             pfwin.Show();
+        }
+
+        private void btnImport_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void btnSave_Click(object sender, RoutedEventArgs e)
+        {
+            passes.Save();
         }
     }
 }

@@ -1,11 +1,11 @@
-﻿<Window x:Class="PasswordManager.PassFocusWindow"
+﻿<Window x:Class="PasswordManager.AesTest"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:PasswordManager"
         mc:Ignorable="d"
-        Title="PassFocusWindow" Height="400" Width="400">
+        Title="AesTest" Height="450" Width="800">
     <Grid Margin="10">
 
         <StackPanel>
@@ -14,15 +14,20 @@
                     <Setter Property="Margin" Value="0, 0, 0, 10"/>
                 </Style>
             </StackPanel.Resources>
-            
-            <TextBlock>Name</TextBlock>
-            <TextBox x:Name="textBox00" VerticalAlignment="Center"/>
-            <TextBlock>URL</TextBlock>
-            <TextBox x:Name="textBox01" Grid.Row="1"/>
-            <TextBlock>Username</TextBlock>
-            <TextBox x:Name="textBox10" Grid.Column="1"/>
+
+            <TextBlock>Input</TextBlock>
+            <TextBox x:Name="inputText" KeyDown="inputText_KeyDown"/>
             <TextBlock>Password</TextBlock>
-            <TextBox x:Name="textBox11" Grid.Row="1" Grid.Column="1"/>
+            <TextBox x:Name="passwordText" KeyDown="passwordText_KeyDown"/>
+            <TextBlock>Output</TextBlock>
+            <TextBox x:Name="outputText"/>
+            <TextBlock Margin="0, 20, 0, 0">Encrypted Text</TextBlock>
+            <TextBox x:Name="encryptedText" KeyDown="encryptedText_KeyDown"/>
+            <TextBlock>Password</TextBlock>
+            <TextBox x:Name="ePasswordText" KeyDown="ePasswordText_KeyDown"/>
+            <TextBlock>Output</TextBlock>
+            <TextBox x:Name="eOutputText"/>
+
         </StackPanel>
         <DockPanel LastChildFill="False">
             <DockPanel.Resources>
@@ -35,7 +40,8 @@
                 </Style>
             </DockPanel.Resources>
             <Button>Cancel</Button>
-            <Button>Save</Button>
+            <Button x:Name="encryptButton" Click="encryptButton_Click" >Encrypt</Button>
+            <Button x:Name="decryptButton" Click="decryptButton_Click" >Decrypt</Button>
         </DockPanel>
     </Grid>
 </Window>

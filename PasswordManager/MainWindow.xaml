@@ -18,6 +18,8 @@
             </DockPanel.Resources>
 
             <WrapPanel DockPanel.Dock="Top" HorizontalAlignment="Center" Margin="10">
+                <Button x:Name="btnImport" Click="btnImport_Click" Margin="0, 0, 10, 0">Import</Button>
+                <Button x:Name="btnSave" Click="btnSave_Click" Margin="0, 0, 10, 0">Save</Button>
                 <Button Name="btnClickMe" Click="btnClickMe_Click">Click me!</Button>
             </WrapPanel>
 
